@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SectionPage } from "@/components/dashboard/section-page";
+export const Route = createFileRoute("/customer-insights")({head:()=>({meta:[{title:"Customer Insights | Aarohan AI Email Responder"},{name:"description",content:"Customer Insights dashboard with sample banking operations data."},{property:"og:title",content:"Customer Insights | Aarohan AI Email Responder"},{property:"og:description",content:"Customer Insights dashboard with sample banking operations data."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <SectionPage kind="customer-insights"/>});
