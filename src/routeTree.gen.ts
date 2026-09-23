@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AiPerformanceRouteImport } from './routes/ai-performance'
+import { Route as CustomerInsightsRouteImport } from './routes/customer-insights'
+import { Route as EmailQueueRouteImport } from './routes/email-queue'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as RiskComplianceRouteImport } from './routes/risk-compliance'
+import { Route as ServiceCategoriesRouteImport } from './routes/service-categories'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SlaOperationsRouteImport } from './routes/sla-operations'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiPerformanceRoute = AiPerformanceRouteImport.update({
+  id: '/ai-performance',
+  path: '/ai-performance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomerInsightsRoute = CustomerInsightsRouteImport.update({
+  id: '/customer-insights',
+  path: '/customer-insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmailQueueRoute = EmailQueueRouteImport.update({
+  id: '/email-queue',
+  path: '/email-queue',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiskComplianceRoute = RiskComplianceRouteImport.update({
+  id: '/risk-compliance',
+  path: '/risk-compliance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceCategoriesRoute = ServiceCategoriesRouteImport.update({
+  id: '/service-categories',
+  path: '/service-categories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SlaOperationsRoute = SlaOperationsRouteImport.update({
+  id: '/sla-operations',
+  path: '/sla-operations',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-performance': typeof AiPerformanceRoute
+  '/customer-insights': typeof CustomerInsightsRoute
+  '/email-queue': typeof EmailQueueRoute
+  '/reports': typeof ReportsRoute
+  '/risk-compliance': typeof RiskComplianceRoute
+  '/service-categories': typeof ServiceCategoriesRoute
+  '/settings': typeof SettingsRoute
+  '/sla-operations': typeof SlaOperationsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-performance': typeof AiPerformanceRoute
+  '/customer-insights': typeof CustomerInsightsRoute
+  '/email-queue': typeof EmailQueueRoute
+  '/reports': typeof ReportsRoute
+  '/risk-compliance': typeof RiskComplianceRoute
+  '/service-categories': typeof ServiceCategoriesRoute
+  '/settings': typeof SettingsRoute
+  '/sla-operations': typeof SlaOperationsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ai-performance': typeof AiPerformanceRoute
+  '/customer-insights': typeof CustomerInsightsRoute
+  '/email-queue': typeof EmailQueueRoute
+  '/reports': typeof ReportsRoute
+  '/risk-compliance': typeof RiskComplianceRoute
+  '/service-categories': typeof ServiceCategoriesRoute
+  '/settings': typeof SettingsRoute
+  '/sla-operations': typeof SlaOperationsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ai-performance'
+    | '/customer-insights'
+    | '/email-queue'
+    | '/reports'
+    | '/risk-compliance'
+    | '/service-categories'
+    | '/settings'
+    | '/sla-operations'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/ai-performance'
+    | '/customer-insights'
+    | '/email-queue'
+    | '/reports'
+    | '/risk-compliance'
+    | '/service-categories'
+    | '/settings'
+    | '/sla-operations'
+  id:
+    | '__root__'
+    | '/'
+    | '/ai-performance'
+    | '/customer-insights'
+    | '/email-queue'
+    | '/reports'
+    | '/risk-compliance'
+    | '/service-categories'
+    | '/settings'
+    | '/sla-operations'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AiPerformanceRoute: typeof AiPerformanceRoute
+  CustomerInsightsRoute: typeof CustomerInsightsRoute
+  EmailQueueRoute: typeof EmailQueueRoute
+  ReportsRoute: typeof ReportsRoute
+  RiskComplianceRoute: typeof RiskComplianceRoute
+  ServiceCategoriesRoute: typeof ServiceCategoriesRoute
+  SettingsRoute: typeof SettingsRoute
+  SlaOperationsRoute: typeof SlaOperationsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-performance': {
+      id: '/ai-performance'
+      path: '/ai-performance'
+      fullPath: '/ai-performance'
+      preLoaderRoute: typeof AiPerformanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/customer-insights': {
+      id: '/customer-insights'
+      path: '/customer-insights'
+      fullPath: '/customer-insights'
+      preLoaderRoute: typeof CustomerInsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/email-queue': {
+      id: '/email-queue'
+      path: '/email-queue'
+      fullPath: '/email-queue'
+      preLoaderRoute: typeof EmailQueueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/risk-compliance': {
+      id: '/risk-compliance'
+      path: '/risk-compliance'
+      fullPath: '/risk-compliance'
+      preLoaderRoute: typeof RiskComplianceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-categories': {
+      id: '/service-categories'
+      path: '/service-categories'
+      fullPath: '/service-categories'
+      preLoaderRoute: typeof ServiceCategoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sla-operations': {
+      id: '/sla-operations'
+      path: '/sla-operations'
+      fullPath: '/sla-operations'
+      preLoaderRoute: typeof SlaOperationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AiPerformanceRoute: AiPerformanceRoute,
+  CustomerInsightsRoute: CustomerInsightsRoute,
+  EmailQueueRoute: EmailQueueRoute,
+  ReportsRoute: ReportsRoute,
+  RiskComplianceRoute: RiskComplianceRoute,
+  ServiceCategoriesRoute: ServiceCategoriesRoute,
+  SettingsRoute: SettingsRoute,
+  SlaOperationsRoute: SlaOperationsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
