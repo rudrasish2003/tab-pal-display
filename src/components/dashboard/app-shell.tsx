@@ -11,7 +11,7 @@ const icons: Record<string, ComponentType<{ className?: string }>> = { LayoutDas
 function Navigation({ compact = false }: { compact?: boolean }) {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   return <nav className="space-y-1 px-2" aria-label="Main navigation">{navItems.map((item) => {
-    const Icon = icons[item.icon]; const active = pathname === item.to;
+    const Icon = icons[item.icon] ?? LayoutDashboard; const active = pathname === item.to;
     return <Link key={item.to} to={item.to} title={compact ? item.label : undefined} className={cn("group flex h-10 items-center gap-3 rounded-md px-3 text-sm font-medium transition-colors", active ? "bg-sidebar-primary text-sidebar-primary-foreground" : "text-sidebar-foreground/75 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground", compact && "justify-center px-0")}>
       <Icon className="size-[18px] shrink-0" />{!compact && <span>{item.label}</span>}
     </Link>;
