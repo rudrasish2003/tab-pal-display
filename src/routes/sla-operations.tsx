@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SectionPage } from "@/components/dashboard/section-page";
+export const Route = createFileRoute("/sla-operations")({head:()=>({meta:[{title:"SLA & Operations | Aarohan AI Email Responder"},{name:"description",content:"SLA & Operations dashboard with sample banking operations data."},{property:"og:title",content:"SLA & Operations | Aarohan AI Email Responder"},{property:"og:description",content:"SLA & Operations dashboard with sample banking operations data."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <SectionPage kind="sla-operations"/>});
